@@ -401,7 +401,7 @@
 <body>
 
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-        <h5 class="my-0 mr-md-auto font-weight-normal">Company</h5>
+        <h5 class="my-0 mr-md-auto font-weight-normal">Trainer</h5>
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark" href="/companies">Companies</a>
             <a class="p-2 text-dark" href="/trainers">Trainers</a>
@@ -412,37 +412,16 @@
     </div>
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-4">Companies</h1>
-        <p class="lead">List Comapanies</p>
+        <h1 class="display-4">Search</h1>
+        {{-- <p class="lead">List Trainers</p> --}}
     </div>
 
     <div class="container">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">company_id</th>
-                    <th scope="col">company_name</th>
-                    <th scope="col">company_web</th>
-                    <th scope="col">company_address</th>
-                    <th scope="col">company_code</th>
-                    <th scope="col">company_phone</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($companies as $company)
-                <tr>
-                    <td>{!! $company->company_id !!}</td>
-                    <td>{!! $company->company_name !!}</td>
-                    <td>{!! $company->company_web !!}</td>
-                    <td>{!! $company->company_address !!}</td>
-                    <td>{!! $company->company_code !!}</td>
-                    <td>{!! $company->company_phone !!}</td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
         <div class="d-flex justify-content-center">
-            {{ $companies->onEachSide(5)->links() }}
+        <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
         </div>
         <footer class="pt-4 my-md-5 pt-md-5 border-top">
             <div class="row">
