@@ -7,8 +7,8 @@ use App\Models\Trainers;
 class TrainersController extends Controller
 {
     public function trainers(){
-        $obj = new Trainers();
-        $trainers = $obj->paginate(10);
+        
+        $trainers = Trainers::paginate(10);
         return view('trainers', ['trainers' => $trainers]);
     }
 }
